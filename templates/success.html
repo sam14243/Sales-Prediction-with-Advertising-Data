@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<title>Predicted Sales</title>
+
+<style>
+body {
+    font-family: Tahoma;
+    background-image: url("{{ url_for('static', filename='Model6.jpg')}}");
+    
+}
+h1 {
+    color: blue;
+    font-family: Tahoma;
+    font-size: 200%;
+    padding:3px;
+}
+
+form{
+    border: 1px solid #ccc;
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+div{
+    padding:6px;
+}
+</style>
+</head>
+
+<body>
+<form action ="/result" method="Post">
+<h1>Sales Prediction:</h1>
+<div>Predicted Sales Amount is {{data}} million</div>
+</form>
+</body>
+
+
+</html>
+
+
+
