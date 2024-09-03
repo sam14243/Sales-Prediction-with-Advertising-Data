@@ -1,16 +1,18 @@
+#%%
 import pandas as pd
 data = pd.read_csv('Sales.csv')
 
 
 data.info()
-print(data.isnull().sum())
-data = data.fillna(data.mean())
-print(data.corr())
-
 data = data.replace('Mega', 0)
 data = data.replace('Micro', 1)
 data = data.replace('Nano', 2)
 data = data.replace('Macro', 3)
+
+data.info()
+print(data.isnull().sum())
+data = data.fillna(data.mean())
+print(data.corr())
 
 x = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values

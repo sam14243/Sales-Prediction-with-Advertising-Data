@@ -44,14 +44,13 @@ input[type="submit"] {
     
     transform: translate(50px, -5px);
 }
-}
 input[type="submit"]:hover {
     background-color: #3461eb;
     border-radius: 10px;
 }
 
 label{
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
     font-size: 120%;
     margin-bottom: 20px;
     font-family: Tahoma;
@@ -62,24 +61,56 @@ label{
     font-size: 12px;
     padding-left:220px;
 }
+button.submit-btn {
+    width: 48%;
+    background-color: #80bfff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+button.submit-btn:hover {
+    background-color: #3461eb;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
 </style>
 </head>
-
 <body>
 <form action ="/login" method="Post">
 <h1>Log In</h1>
 <label for="username">Username: <br></label>
-<input type = "text" name="exp" placeholder="Username"/>
+<input type = "text" name="exp" placeholder="Username" required />
 <br/>
 <label for="password">Password: <br></label>
-<input type = "password" name="test" placeholder="Password"/>
+<input type = "password" name="test" placeholder="Password" required />
 <br/>
-<input type = "submit" value="Log In">
+<!-- <input type = "submit" value="Log In"> -->
+<!-- <div class="button-container">
+    <input type="submit" value="Log In" />
+    <button type="button" onclick="window.location.href='{{ url_for("signup") }}';" class="submit-btn">Sign Up</button>
+</div> -->
+<!-- 
+<div class="button-container">
+    <input type="submit" value="Log In" />
+    <form action="/signup" method="get" style="width: 48%; margin: 10px;">
+        <input type="submit" value="Sign Up" />
+    </form>
+</div> -->
+<div class="button-container">
+    <input type="submit" value="Log In" />
+    <input type="submit" value="Sign Up" onclick="window.location.href='{{ url_for("signup") }}';" />
+</div>
+
 <div class="msg">{{msg}}</div>
-<br/>
+<!-- <br/> -->
 </form>
 </body>
-
-
 </html>
 
